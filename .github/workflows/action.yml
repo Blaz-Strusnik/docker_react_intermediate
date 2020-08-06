@@ -7,5 +7,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up -d
-      - name: Test
-        run: docker run -e CI=true docker_react_web:latest npm run test
