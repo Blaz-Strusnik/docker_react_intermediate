@@ -5,13 +5,13 @@ services:
   - docker
 
 before_install:
-  - docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t blazstr/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run stephengrider/react-test npm test -- --coverage
+  - docker run blazstr/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t stephengrider/multi-client ./client
-  - docker build -t stephengrider/multi-nginx ./nginx
-  - docker build -t stephengrider/multi-server ./server
-  - docker build -t stephengrider/multi-worker ./worker
+  - docker build -t blazstr/multi-client ./client
+  - docker build -t blazstr/multi-nginx ./nginx
+  - docker build -t blazstr/multi-server ./server
+  - docker build -t blazstr/multi-worker ./worker
